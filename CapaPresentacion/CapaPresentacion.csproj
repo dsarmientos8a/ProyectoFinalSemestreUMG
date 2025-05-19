@@ -121,6 +121,9 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMenus.resx">
+      <DependentUpon>frmMenus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMesas.resx">
       <DependentUpon>frmMesas.cs</DependentUpon>
     </EmbeddedResource>
