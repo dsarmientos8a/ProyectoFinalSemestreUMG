@@ -31,7 +31,7 @@
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.txtIngredientes = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCodigoCliente = new System.Windows.Forms.TextBox();
+            this.lblCodigoMenu = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,12 +42,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.txtPrecio = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cborCategoria = new System.Windows.Forms.ComboBox();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -85,15 +85,15 @@
             this.txtNombre.Size = new System.Drawing.Size(134, 21);
             this.txtNombre.TabIndex = 19;
             // 
-            // txtCodigoCliente
+            // lblCodigoMenu
             // 
-            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoCliente.Location = new System.Drawing.Point(140, 21);
-            this.txtCodigoCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCodigoCliente.Name = "txtCodigoCliente";
-            this.txtCodigoCliente.ReadOnly = true;
-            this.txtCodigoCliente.Size = new System.Drawing.Size(134, 21);
-            this.txtCodigoCliente.TabIndex = 18;
+            this.lblCodigoMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoMenu.Location = new System.Drawing.Point(140, 21);
+            this.lblCodigoMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.lblCodigoMenu.Name = "lblCodigoMenu";
+            this.lblCodigoMenu.ReadOnly = true;
+            this.lblCodigoMenu.Size = new System.Drawing.Size(134, 21);
+            this.lblCodigoMenu.TabIndex = 18;
             // 
             // label7
             // 
@@ -208,7 +208,7 @@
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.txtIngredientes);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtCodigoCliente);
+            this.groupBox1.Controls.Add(this.lblCodigoMenu);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -221,6 +221,51 @@
             this.groupBox1.Size = new System.Drawing.Size(811, 135);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 25;
+            this.btnCancelar.Location = new System.Drawing.Point(699, 100);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(84, 31);
+            this.btnCancelar.TabIndex = 29;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            this.btnEditar.IconColor = System.Drawing.Color.Black;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 25;
+            this.btnEditar.Location = new System.Drawing.Point(699, 50);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(84, 31);
+            this.btnEditar.TabIndex = 28;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnGuardar.IconColor = System.Drawing.Color.Black;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 25;
+            this.btnGuardar.Location = new System.Drawing.Point(699, 9);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(84, 31);
+            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // txtPrecio
             // 
@@ -257,51 +302,6 @@
             this.cborCategoria.Name = "cborCategoria";
             this.cborCategoria.Size = new System.Drawing.Size(134, 21);
             this.cborCategoria.TabIndex = 24;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnGuardar.IconColor = System.Drawing.Color.Black;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.IconSize = 25;
-            this.btnGuardar.Location = new System.Drawing.Point(699, 9);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(84, 31);
-            this.btnGuardar.TabIndex = 27;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
-            this.btnEditar.IconColor = System.Drawing.Color.Black;
-            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.IconSize = 25;
-            this.btnEditar.Location = new System.Drawing.Point(699, 50);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(84, 31);
-            this.btnEditar.TabIndex = 28;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 25;
-            this.btnCancelar.Location = new System.Drawing.Point(699, 100);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(84, 31);
-            this.btnCancelar.TabIndex = 29;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
@@ -360,7 +360,7 @@
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.TextBox txtIngredientes;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCodigoCliente;
+        private System.Windows.Forms.TextBox lblCodigoMenu;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Label label5;
