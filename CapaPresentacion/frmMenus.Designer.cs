@@ -33,7 +33,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblCodigoMenu = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvMenus = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,12 +45,12 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.txtPrecio = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cborCategoria = new System.Windows.Forms.ComboBox();
+            this.cboxCategoria = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenus)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,19 +106,19 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Estado:";
             // 
-            // dgvClientes
+            // dgvMenus
             // 
-            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(20, 205);
-            this.dgvClientes.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.ReadOnly = true;
-            this.dgvClientes.RowHeadersWidth = 51;
-            this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(808, 179);
-            this.dgvClientes.TabIndex = 35;
+            this.dgvMenus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvMenus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMenus.Location = new System.Drawing.Point(20, 205);
+            this.dgvMenus.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvMenus.Name = "dgvMenus";
+            this.dgvMenus.ReadOnly = true;
+            this.dgvMenus.RowHeadersWidth = 51;
+            this.dgvMenus.RowTemplate.Height = 24;
+            this.dgvMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMenus.Size = new System.Drawing.Size(808, 179);
+            this.dgvMenus.TabIndex = 35;
             // 
             // label5
             // 
@@ -202,9 +202,9 @@
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.txtPrecio);
+            this.groupBox1.Controls.Add(this.lblPrecio);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.cborCategoria);
+            this.groupBox1.Controls.Add(this.cboxCategoria);
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.txtIngredientes);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -267,16 +267,16 @@
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // txtPrecio
+            // lblPrecio
             // 
-            this.txtPrecio.AutoSize = true;
-            this.txtPrecio.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(450, 54);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(107, 16);
-            this.txtPrecio.TabIndex = 26;
-            this.txtPrecio.Text = "Imprimir Precio:";
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(450, 54);
+            this.lblPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(107, 16);
+            this.lblPrecio.TabIndex = 26;
+            this.lblPrecio.Text = "Imprimir Precio:";
             // 
             // label9
             // 
@@ -289,19 +289,20 @@
             this.label9.TabIndex = 25;
             this.label9.Text = "Precio:";
             // 
-            // cborCategoria
+            // cboxCategoria
             // 
-            this.cborCategoria.FormattingEnabled = true;
-            this.cborCategoria.Items.AddRange(new object[] {
+            this.cboxCategoria.FormattingEnabled = true;
+            this.cboxCategoria.Items.AddRange(new object[] {
             "Desayunos",
             "Almuerzos",
             "Cenas",
             "Postres",
             "Bebidas"});
-            this.cborCategoria.Location = new System.Drawing.Point(453, 24);
-            this.cborCategoria.Name = "cborCategoria";
-            this.cborCategoria.Size = new System.Drawing.Size(134, 21);
-            this.cborCategoria.TabIndex = 24;
+            this.cboxCategoria.Location = new System.Drawing.Point(453, 24);
+            this.cboxCategoria.Name = "cboxCategoria";
+            this.cboxCategoria.Size = new System.Drawing.Size(134, 21);
+            this.cboxCategoria.TabIndex = 24;
+            this.cboxCategoria.SelectedIndexChanged += new System.EventHandler(this.cborCategoria_SelectedIndexChanged);
             // 
             // btnEliminar
             // 
@@ -340,14 +341,15 @@
             this.ClientSize = new System.Drawing.Size(844, 433);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.dgvMenus);
             this.Controls.Add(this.trtFecha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmMenus";
             this.Text = "frmMenus";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.Load += new System.EventHandler(this.frmMenus_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenus)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -362,7 +364,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox lblCodigoMenu;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridView dgvMenus;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -371,9 +373,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label txtPrecio;
+        private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cborCategoria;
+        private System.Windows.Forms.ComboBox cboxCategoria;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;

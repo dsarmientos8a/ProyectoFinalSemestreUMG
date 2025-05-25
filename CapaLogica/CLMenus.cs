@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaLogica
 {
-    internal class CLMenus
+    public class CLMenus
     {
         public int MtdTipoMenu(string Precio)
         {
