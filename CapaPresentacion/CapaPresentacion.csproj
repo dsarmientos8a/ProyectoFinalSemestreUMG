@@ -53,6 +53,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detalles Ordenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalles Ordenes.Designer.cs">
+      <DependentUpon>Detalles Ordenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetallesOrdenes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Detalles Ordenes.resx">
+      <DependentUpon>Detalles Ordenes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>

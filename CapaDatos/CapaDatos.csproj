@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="CDClientes.cs" />
     <Compile Include="CDconexion.cs" />
+    <Compile Include="CDInventarios.cs" />
     <Compile Include="CDLogin.cs" />
     <Compile Include="CDMenus.cs" />
     <Compile Include="CDMesas.cs" />

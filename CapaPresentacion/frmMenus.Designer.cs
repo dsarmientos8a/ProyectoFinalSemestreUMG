@@ -31,13 +31,13 @@
             this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.txtIngredientes = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblCodigoMenu = new System.Windows.Forms.TextBox();
+            this.txtCodigoMenu = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvMenus = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.trtFecha = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@
             this.cboxCategoria = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
+            this.lblUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenus)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -85,15 +86,15 @@
             this.txtNombre.Size = new System.Drawing.Size(134, 21);
             this.txtNombre.TabIndex = 19;
             // 
-            // lblCodigoMenu
+            // txtCodigoMenu
             // 
-            this.lblCodigoMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoMenu.Location = new System.Drawing.Point(140, 21);
-            this.lblCodigoMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.lblCodigoMenu.Name = "lblCodigoMenu";
-            this.lblCodigoMenu.ReadOnly = true;
-            this.lblCodigoMenu.Size = new System.Drawing.Size(134, 21);
-            this.lblCodigoMenu.TabIndex = 18;
+            this.txtCodigoMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoMenu.Location = new System.Drawing.Point(140, 21);
+            this.txtCodigoMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCodigoMenu.Name = "txtCodigoMenu";
+            this.txtCodigoMenu.ReadOnly = true;
+            this.txtCodigoMenu.Size = new System.Drawing.Size(134, 21);
+            this.txtCodigoMenu.TabIndex = 18;
             // 
             // label7
             // 
@@ -108,7 +109,7 @@
             // 
             // dgvMenus
             // 
-            this.dgvMenus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvMenus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMenus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenus.Location = new System.Drawing.Point(20, 205);
             this.dgvMenus.Margin = new System.Windows.Forms.Padding(2);
@@ -119,6 +120,7 @@
             this.dgvMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMenus.Size = new System.Drawing.Size(808, 179);
             this.dgvMenus.TabIndex = 35;
+            this.dgvMenus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenus_CellClick);
             // 
             // label5
             // 
@@ -153,16 +155,17 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre:";
             // 
-            // trtFecha
+            // lblFecha
             // 
-            this.trtFecha.AutoSize = true;
-            this.trtFecha.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trtFecha.Location = new System.Drawing.Point(700, 32);
-            this.trtFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.trtFecha.Name = "trtFecha";
-            this.trtFecha.Size = new System.Drawing.Size(100, 16);
-            this.trtFecha.TabIndex = 33;
-            this.trtFecha.Text = "Imprimir fecha:";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Calisto MT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(700, 32);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(100, 16);
+            this.lblFecha.TabIndex = 33;
+            this.lblFecha.Text = "Imprimir fecha:";
+            this.lblFecha.Click += new System.EventHandler(this.trtFecha_Click);
             // 
             // label1
             // 
@@ -208,7 +211,7 @@
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.txtIngredientes);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.lblCodigoMenu);
+            this.groupBox1.Controls.Add(this.txtCodigoMenu);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -236,6 +239,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -251,6 +255,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -266,6 +271,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblPrecio
             // 
@@ -318,6 +324,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -333,16 +340,28 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(25, 9);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(64, 20);
+            this.lblUsuario.TabIndex = 36;
+            this.lblUsuario.Text = "Usuario";
             // 
             // frmMenus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 433);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvMenus);
-            this.Controls.Add(this.trtFecha);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
@@ -362,13 +381,13 @@
         private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.TextBox txtIngredientes;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox lblCodigoMenu;
+        private System.Windows.Forms.TextBox txtCodigoMenu;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvMenus;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label trtFecha;
+        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
@@ -381,5 +400,6 @@
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnSalir;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }

@@ -14,27 +14,53 @@ namespace CapaDatos
 
         public DataTable MtdMostrarMenu()
         {
-            string QueryConsultaClientes = "Select * from tbl_clientes";
-            SqlDataAdapter AdapterCli = new SqlDataAdapter(QueryConsultaClientes, conn.MtdAbrirConexion());
-            DataTable dtClientes = new DataTable();
-            AdapterCli.Fill(dtClientes);
+            string QueryConsultaMenu = "select * from tbl_Menus";
+            SqlDataAdapter AdapterCli = new SqlDataAdapter(QueryConsultaMenu, conn.MtdAbrirConexion());
+            DataTable dtMenu = new DataTable();
+            AdapterCli.Fill(dtMenu);
             conn.MtdCerrarConexion();
-            return dtClientes;
+            return dtMenu;
         }
 
-        public void MtdAgregarClientes(string Nombre, string Ingredientes, int Categoria, double Precio, string Estado, string UsuarioSistema, DateTime FechaSistema)
+        public void MtdAgregarMenu(string Nombre, string Ingredientes, string Categoria, decimal Precio, string Estado, string UsuarioSistema, DateTime FechaSistema)
         {
-            string QueryAgregarClientes = "Insert into tbl_clientes( Nombre, Ingredientes, Categoria, Precio, Estado, UsuarioSistema, FechaSistema) values (@Nombre, @Ingredientes, @Categoria, @Precio, @Estado, @UsuarioSistema, @FechaSistema)";
-            SqlCommand CommAgregaClientes = new SqlCommand(QueryAgregarClientes, conn.MtdAbrirConexion());
-            CommAgregaClientes.Parameters.AddWithValue("@Nombre", Nombre);
-            CommAgregaClientes.Parameters.AddWithValue("@Nit", Ingredientes);
-            CommAgregaClientes.Parameters.AddWithValue("@Telefono", Categoria);
-            CommAgregaClientes.Parameters.AddWithValue("@Direccion", Precio);
-            CommAgregaClientes.Parameters.AddWithValue("@Estado", Estado);
-            CommAgregaClientes.Parameters.AddWithValue("@FechaAuditoria", UsuarioSistema);
-            CommAgregaClientes.Parameters.AddWithValue("@UsuarioAuditoria", FechaSistema);
-            CommAgregaClientes.ExecuteNonQuery();
+            string QueryMtdAgregarMenu = "insert into tbl_Menus(Nombre, Ingredientes, Categoria, Precio, Estado, UsuarioSistema, FechaSistema) values (@Nombre, @Ingredientes, @Categoria, @Precio, @Estado, @UsuarioSistema, @FechaSistema)";
+            SqlCommand AgregarMenu = new SqlCommand(QueryMtdAgregarMenu, conn.MtdAbrirConexion());
+            AgregarMenu.Parameters.AddWithValue("@Nombre", Nombre);
+            AgregarMenu.Parameters.AddWithValue("@Ingredientes", Ingredientes);
+            AgregarMenu.Parameters.AddWithValue("@Categoria", Categoria);
+            AgregarMenu.Parameters.AddWithValue("@Precio", Precio);
+            AgregarMenu.Parameters.AddWithValue("@Estado", Estado);
+            AgregarMenu.Parameters.AddWithValue("@UsuarioSistema", UsuarioSistema);
+            AgregarMenu.Parameters.AddWithValue("@FechaSistema", FechaSistema);
+            AgregarMenu.ExecuteNonQuery();
             conn.MtdCerrarConexion();
         }
+
+        public void MtdEditarMenu(int CodigoMenu, string Nombre, string Ingredientes, string Categoria, decimal Precio, string Estado, string UsuarioSistema, DateTime FechaSistema)
+        {
+            string QueryEditarMenu = "Update tbl_Menus set Nombre = @Nombre, Ingredientes = @Ingredientes, Categoria = @Categoria, Precio = @Precio, Estado = @Estado, UsuarioSistema = @UsuarioSistema, FechaSistema = @FechaSistema where CodigoMenu = @CodigoMenu";
+            SqlCommand CommEditarMenu = new SqlCommand(QueryEditarMenu, conn.MtdAbrirConexion());
+            CommEditarMenu.Parameters.AddWithValue("@CodigoMenu", CodigoMenu);
+            CommEditarMenu.Parameters.AddWithValue("@Nombre", Nombre);
+            CommEditarMenu.Parameters.AddWithValue("@Ingredientes", Ingredientes);
+            CommEditarMenu.Parameters.AddWithValue("@Categoria", Categoria);
+            CommEditarMenu.Parameters.AddWithValue("@Precio", Precio);
+            CommEditarMenu.Parameters.AddWithValue("@Estado", Estado);
+            CommEditarMenu.Parameters.AddWithValue("@UsuarioSistema", UsuarioSistema);
+            CommEditarMenu.Parameters.AddWithValue("@FechaSistema", FechaSistema);
+            CommEditarMenu.ExecuteNonQuery();
+            conn.MtdCerrarConexion();
+        }
+
+        public void MtdEliminarMenu(int CodigoMenu)
+        {
+            string QueryEliminarMenu = "delete from tbl_Menus where CodigoMenu = @CodigoMenu";
+            SqlCommand CommEliminarMenu = new SqlCommand(QueryEliminarMenu, conn.MtdAbrirConexion());
+            CommEliminarMenu.Parameters.AddWithValue("@CodigoMenu", CodigoMenu);
+            CommEliminarMenu.ExecuteNonQuery();
+            conn.MtdCerrarConexion();
+        }
+
     }
 }

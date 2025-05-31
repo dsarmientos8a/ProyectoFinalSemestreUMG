@@ -32,5 +32,11 @@ namespace CapaLogica
 
             return PrecioMenu;
         }
+
+        public  DateTime MtdFechaHoy()
+        {
+            DateTime FechaSistema = DateTime.Now;
+            return FechaSistema;
+        }
     }
 }
